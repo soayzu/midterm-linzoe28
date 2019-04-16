@@ -17,7 +17,11 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("notes")
 public class NotesResource {
+
     //1. (18%) return the notes list stored in NoteRepository; remember to add the required annotations
-    public List<Note> getNotes(){
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Note> getNotes() {
+        return NoteRepository.getNotes();
     }
 }
